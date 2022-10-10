@@ -7,8 +7,11 @@ import salasRoutes from "./routes/salas.routes.js"
 import peliculasRoutes from "./routes/peliculas.routes.js"
 import sits_cinesRoutes from "./routes/sits_cines.routes.js"
 import compRealizadas from "./routes/comprasR.routes.js";
+import cors from "cors"
 
 const app = express()
+
+app.use(cors())
 
 app.use(express.json())
 
@@ -23,6 +26,7 @@ app.use(
     sits_cinesRoutes,
     compRealizadas
 )
+
 
 
 app.use((req, res, next) => {

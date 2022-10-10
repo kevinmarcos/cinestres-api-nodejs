@@ -12,11 +12,11 @@ CREATE TABLE Usuarios(
     PRIMARY KEY (id)
 );
 
-INSERT INTO Usuarios (nombre, edad, correo) VALUES ("Kevin",19,"74053373@certus.edu.pe");
-INSERT INTO Usuarios (nombre, edad, correo) VALUES ("Robert",28,"robert123@gmail.com");
-INSERT INTO Usuarios (nombre, edad, correo) VALUES ("Nataly",29,"nataly123@gmail.com");
-INSERT INTO Usuarios (nombre, edad, correo) VALUES ("Marcos",55,"marcos123@gmail.com");
-INSERT INTO Usuarios (nombre, edad, correo) VALUES ("Lucila",45,"luci123@gmail.com");
+INSERT INTO Usuarios (nombre, edad, correo) VALUES ("Kevin",19,"74053373@certus.edu.pe"),
+("Robert",28,"robert123@gmail.com"),
+("Nataly",29,"nataly123@gmail.com"),
+("Marcos",55,"marcos123@gmail.com"),
+("Lucila",45,"luci123@gmail.com");
 -- -----------------------------------------
 CREATE TABLE Promociones(
     id INT AUTO_INCREMENT,
@@ -36,13 +36,13 @@ CREATE TABLE Costos(
     PRIMARY KEY (id)
 );
 
-INSERT INTO Costos (dia, precio) VALUES ("Lunes", 15);
-INSERT INTO Costos (dia, precio) VALUES ("Martes", 15);
-INSERT INTO Costos (dia, precio) VALUES ("Miercoles", 15);
-INSERT INTO Costos (dia, precio) VALUES ("Juevez", 15);
-INSERT INTO Costos (dia, precio) VALUES ("Viernes", 15);
-INSERT INTO Costos (dia, precio) VALUES ("Sabado", 25);
-INSERT INTO Costos (dia, precio) VALUES ("Domingo", 30);
+INSERT INTO Costos (dia, precio) VALUES ("Lunes", 15),
+("Martes", 15),
+("Miercoles", 15),
+("Juevez", 15),
+("Viernes", 15),
+("Sabado", 25),
+("Domingo", 30);
 -- -----------------------------------------
 CREATE TABLE Cines(
     id INT AUTO_INCREMENT,
@@ -51,11 +51,11 @@ CREATE TABLE Cines(
     PRIMARY KEY (id)
 );
 
-INSERT INTO Cines (ubicacion, distrito) VALUES ("Jr. Hola Mundo 1324","San Borja");
-INSERT INTO Cines (ubicacion, distrito) VALUES ("Jr. Pedre Picapiedra 1546","La Molina");
-INSERT INTO Cines (ubicacion, distrito) VALUES ("Jr. Lolas 1021","Comas");
-INSERT INTO Cines (ubicacion, distrito) VALUES ("Jr. Investigacion 1320","El Rimac");
-INSERT INTO Cines (ubicacion, distrito) VALUES ("Jr. Esternocleidomastoideo 7910","Pueblo Libre");
+INSERT INTO Cines (ubicacion, distrito) VALUES ("Jr. Hola Mundo 1324","San Borja"),
+("Jr. Pedre Picapiedra 1546","La Molina"),
+("Jr. Lolas 1021","Comas"),
+("Jr. Investigacion 1320","El Rimac"),
+("Jr. Esternocleidomastoideo 7910","Pueblo Libre");
 -- -----------------------------------------
 CREATE TABLE Salas(
     id INT AUTO_INCREMENT,
@@ -64,9 +64,9 @@ CREATE TABLE Salas(
     PRIMARY KEY (id)
 );
 
-INSERT INTO Salas (sala, estado) VALUES (1,1);
-INSERT INTO Salas (sala, estado) VALUES (2,1);
-INSERT INTO Salas (sala, estado) VALUES (3,1);
+INSERT INTO Salas (sala, estado) VALUES (1,1),
+(2,1),
+(3,1);
 -- -----------------------------------------
 CREATE TABLE Peliculas(
     id INT AUTO_INCREMENT,
@@ -93,8 +93,7 @@ INSERT INTO Peliculas (nombre, director, diaEstreno, genero, duracion, pais, sin
     Woody busca deshacerse en secreto de él por haberlo sustituido como el muñeco favorito de 
     Andy. Por otra parte, Buzz desconoce su identidad como un juguete y cree que su objetivo es 
     regresar de vuelta a su planeta natal.", 1, "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Toy_Story.svg/800px-Toy_Story.svg.png"
-);
-INSERT INTO Peliculas (nombre, director, diaEstreno, genero, duracion, pais, sinopsis, estado, img) VALUES (
+),(
     "Kung Fu Panda", "Mark Osborne y John Wayne Stevenson","2023-01-25", "	Animación, Aventura,
     Comedia, Infantil, Wuxia",
     "01:32:00","Estados Unidos - China","El panda Po trabaja en la tienda de fideos de su familia 
@@ -103,8 +102,7 @@ INSERT INTO Peliculas (nombre, director, diaEstreno, genero, duracion, pais, sin
     con sus ídolos, los Cinco Furiosos. Po necesitará toda la sabiduría, fortaleza y habilidades para 
     poder proteger a su gente de Tai Lung, un maldito leopardo de nieve.", 1, 
     "https://static.wikia.nocookie.net/kungfupanda/images/f/ff/Kung-fu-panda-poster.jpg/revision/latest?cb=20120911211015&path-prefix=es"
-);
-INSERT INTO Peliculas (nombre, director, diaEstreno, genero, duracion, pais, sinopsis, estado, img) VALUES (
+),(
     "Madagascar", "Eric Darnell - Tom McGrath","2022-011-13", "	Animación,Comedia",
     "01:26:00","Estados Unidos","Alex el león es el rey de la selva urbana: es la atracción estelar del 
     zoo neoyorquino de Central Park. Como sus mejores amigos, Marty la cebra, Melman la jirafa y Gloria 
@@ -134,21 +132,21 @@ CREATE TABLE Asientos_Cines(
     FOREIGN KEY (idSala) REFERENCES Salas(id)
 );
 
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A1",1,1,1);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A2",1,1,1);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A3",1,1,1);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A4",1,1,1);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A5",1,1,1);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A1",1,2,2);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A2",1,2,2);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A3",1,2,2);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A4",1,2,2);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A5",1,2,2);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A1",1,3,3);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A2",1,3,3);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A3",1,3,3);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A4",1,3,3);
-INSERT INTO Asiento_Cines (asiento, estado, idCines, idSala) VALUES ("A5",1,3,3);
+INSERT INTO Asientos_Cines (asiento, estado, idCines, idSala) VALUES ("A1",1,1,1),
+("A2",1,1,1),
+("A3",1,1,1),
+("A4",1,1,1),
+("A5",1,1,1),
+("A1",1,2,2),
+("A2",1,2,2),
+("A3",1,2,2),
+("A4",1,2,2),
+("A5",1,2,2),
+("A1",1,3,3),
+("A2",1,3,3),
+("A3",1,3,3),
+("A4",1,3,3),
+("A5",1,3,3);
 -- -----------------------------------------
 CREATE TABLE Compras_Realizadas(
     id INT AUTO_INCREMENT,
@@ -165,7 +163,7 @@ CREATE TABLE Compras_Realizadas(
     FOREIGN KEY (idPromociones) REFERENCES Promociones(id)
 );
 
-INSERT INTO Asiento_Cines (idUsuario, idPelicula, idAsientos_Cines. idCostos, idPromociones) VALUES (
+INSERT INTO Compras_Realizadas (idUsuario, idPelicula, idAsientos_Cines, idCostos, idPromociones) VALUES (
     1,1,1,1,1
 );
 -- -----------------------------------------
